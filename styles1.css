@@ -1,0 +1,599 @@
+/* styles.css */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Alegreya Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Alegreya Sans", sans-serif;
+}
+
+
+/* Navbar */
+/* إعدادات أساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* شريط التنقل */
+.navbar {
+    display: flex;
+    justify-content: center; /* توسيط العناصر في الناف بار */
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0; /* تأكيد أن الناف بار ثابتة في أعلى الصفحة */
+    width: 100%;
+    background-color: #ededed;
+    border: #171715;
+    z-index: 100;
+}
+
+.navbar-logo a {
+    color: #171715;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 30px; /* إضافة مسافة بين الشعار والقائمة */
+}
+
+/* القائمة */
+.navbar-links {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.navbar-links li {
+    padding: 5px 10px;
+}
+
+.navbar-links a {
+    color: #1F4529; /* نفس اللون للشعار */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.navbar-links a:hover {
+    color: #685014;
+}
+
+/* لمزيد من التخصيصات، إذا كنت ترغب في إضافة تأثيرات مثل الظلال أو الهوافر */
+.navbar-links li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    /* تعديل لتكون القائمة مرئية بشكل صحيح في الشاشات الصغيرة */
+    .navbar-links {
+        display: none; /* إخفاء القائمة على الشاشات الصغيرة */
+        flex-direction: column; /* جعل القائمة عمودية */
+        width: 100%; /* جعل عرض القائمة يغطي كامل العرض */
+        background-color: #ededed; /* نفس خلفية الناف بار */
+        position: absolute; /* تأكيد أن القائمة تظهر في مكانها */
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    .navbar-links.show {
+        display: flex; /* إظهار القائمة عند الضغط */
+    }
+
+    .navbar-links li {
+        padding: 10px;
+        text-align: center; /* توسيط العناصر داخل القائمة */
+    }
+}
+
+  
+  
+/* Background Image */
+.background-image {
+    background-image: url(https://holidayguidemagazine.com/wp-content/uploads/2022/05/saudi-arabia-tourism-1024x538.jpeg); /* Background image link */
+    background-size:cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+}
+
+/* Title Style */
+.title h1 {
+    color: #e6ede8;
+    font-size: 3.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(18, 50, 5, 0.7);
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.title h4 {
+    color: #e6ede8;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform:capitalize;
+    text-shadow: 2px 2px 5px rgba(3, 3, 3, 0.7);
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+/* about KSA */
+#about {
+    background-color: #f4f4f4;
+    color: #333;
+    position: relative;
+    overflow: hidden; /* لضمان أن التأثير لا يتجاوز الحدود */
+}
+
+.KSA-header {
+    padding: 20px; /* المسافة داخل الحدود */
+    position: relative;
+    z-index: 2; /* تأكد من أن المحتوى يظهر فوق الخلفية الضبابية */
+}
+
+.KSA-header .content {
+    text-align: center;
+}
+
+.KSA-header .content h2 {
+    font-size: 2.5rem; /* تكبير حجم العنوان */
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* مسافة بين العنوان والنص */
+    margin-top: 1.5rem; /* مسافة بين العنوان والأعلى */
+    font-family: 'Times New Roman', Times, serif;
+    color: #1F4529;
+}
+
+.KSA-header .content p {
+    font-size: 18px; /* حجم الخط في الفقرة */
+    line-height: 1.8;
+    max-width: 800px; /* تحديد عرض الفقرة */
+    margin: 0 auto; /* محاذاة الفقرة في المنتصف */
+    padding: 1rem; /* بعض الحشو للنص */
+    font-family: 'Times New Roman', Times, serif;
+    color: #555;
+}
+
+.ksa-name {
+    color: #327243;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* إضافة الخلفية الضبابية */
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('your-image-path.jpg') center/cover no-repeat; /* أضف هنا مسار الصورة التي تريد استخدامها */
+    filter: blur(5px); /* تعديل قوة الضبابية */
+    z-index: 1; /* تأكد من أن الخلفية تكون خلف المحتوى */
+    pointer-events: none; /* التأكد من أن الخلفية لا تتداخل مع التفاعل */
+}
+
+/* Destinations Section */
+#destinations {
+    padding: 3rem 1rem;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.section-header1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1F4529;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.section-header p {
+    font-size: 1.2rem;
+    color: #555;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.news-card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+.news-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card__text-wrapper {
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.news-card:hover .news-card__image {
+    transform: scale(1.1);
+}
+
+.news-card:hover .news-card__text-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.news-card__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.news-card__post-date {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.news-card__details-wrapper {
+    font-size: 1rem;
+}
+
+.news-card__excerpt {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.news-card__read-more {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #1F4529;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+
+.news-card__read-more:hover {
+    background-color: #DEAA79;
+}
+
+.news-card__card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Culture Section */
+#culture {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+/* Culture Cards Container */
+.culture-cards {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 2rem;
+}
+
+/* Individual Culture Card */
+.culture-card {
+    width: 100%;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow:visible;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition:ease-in-out transform 0.3s ;
+}
+
+.culture-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image and Text */
+.culture-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.culture-text {
+    padding: 1rem;
+}
+
+.culture-text h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1F4529;
+    font-display:inherit;
+}
+
+.culture-text p {
+    font-size: 1rem;
+    color: #555;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+/* قسم المشاريع */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap");
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background-color: #0d0a0b;
+  background: linear-gradient(145deg, #55566a 0%, #131318 76%);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* Content */
+
+.projects {
+  padding-left: 120px;
+  color: #c7c7c7c9;
+  user-select: none;
+}
+
+.projects h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  background: -webkit-linear-gradient(0deg,#1F4529,#1F4529);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+  margin-bottom: 36px;
+  padding-left: 10px;
+}
+
+.projects p {
+  font-size: clamp(0.9rem, 4vw, 1.2rem);
+  line-height: 2;
+  padding-right: 100px;
+  font-family: 'Times New Roman', Times, serif;
+  align-content:center 10px ;
+  color: #555;
+}
+
+/* Stacked Cards */
+
+.stack {
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 400px;
+  border-radius: 2rem;
+  box-shadow: #29341d;
+  transition: transform 0.6s;
+  user-select: none;
+  overflow: hidden;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.card-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* خلفية ضبابية */
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.card:hover .card-text {
+  opacity: 1;
+}
+
+.card-text h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card-text p {
+  font-size: 0.8rem;
+  font-weight: normal;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card:nth-last-child(n + 5) {
+  --x: calc(-50% + 90px);
+  transform: translate(var(--x), -50%) scale(0.85);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.01);
+}
+
+.card:nth-last-child(4) {
+  --x: calc(-50% + 60px);
+  transform: translate(var(--x), -50%) scale(0.9);
+}
+
+.card:nth-last-child(3) {
+  --x: calc(-50% + 30px);
+  transform: translate(var(--x), -50%) scale(0.95);
+}
+
+.card:nth-last-child(2) {
+  --x: calc(-50%);
+  transform: translate(var(--x), -50%) scale(1);
+}
+
+.card:nth-last-child(1) {
+  --x: calc(-50% - 30px);
+  transform: translate(var(--x), -50%) scale(1.05);
+}
+
+.card:nth-last-child(1) img {
+  box-shadow: 0 1px 5px 5px rgba(255, 193, 111, 0.5);
+}
+
+.swap {
+  animation: swap 1.3s ease-out forwards;
+}
+
+@keyframes swap {
+  30% {
+    transform: translate(calc(var(--x) - 250px), -50%) scale(0.85) rotate(-5deg)
+      rotateY(65deg);
+  }
+  100% {
+    transform: translate(calc(var(--x) - 30px), -50%) scale(0.5);
+    z-index: -1;
+  }
+}
+
+/* Media queries for keyframes */
+
+@media (max-width: 1200px) {
+  @keyframes swap {
+    30% {
+      transform: translate(calc(var(--x) - 200px), -50%) scale(0.85)
+        rotate(-5deg) rotateY(65deg);
+    }
+
+    100% {
+      transform: translate(calc(var(--x) - 30px), -50%) scale(0.5);
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  @keyframes swap {
+    30% {
+      transform: translate(calc(var(--x) - 150px), -50%) scale(0.85)
+        rotate(-5deg) rotateY(65deg);
+    }
+
+    100% {
+      transform: translate(calc(var(--x) - 30px), -50%) scale(0.5);
+      z-index: -1;
+    }
+  }
+}
+
+/* Media queries for other classes */
+
+@media (max-width: 1200px) {
+  .projects {
+    padding-left: 80px;
+  }
+
+  .projects h1 {
+    font-size: 50px;
+  }
+
+  .projects p {
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .projects {
+    padding-left: 50px;
+  }
+
+  .projects h1 {
+    font-size: 40px;
+  }
+
+  .projects p {
+    font-size: clamp(0.8rem, 3vw, 1.1rem);
+  }
+
+  .stack {
+    margin-top: 50px;
+  }
+}
+
+  
